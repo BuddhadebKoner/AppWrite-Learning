@@ -28,10 +28,12 @@ const Login = () => {
   return (
     <div className="container">
         <div className="login-register-container">
+          Email : iambuddha@gmail.com
+          Password : Admin123
           <form onSubmit={handleSubmit} ref={loginForm}> 
 
             <div className="form-field-wrapper">
-                <label>Email:</label>
+                <label>Email :</label>
                 <input 
                   required
                   type="email" 
@@ -41,7 +43,7 @@ const Login = () => {
             </div>
 
             <div className="form-field-wrapper">
-                <label>Password:</label>
+                <label>Password :</label>
                 <input 
                   type="password" 
                   name="password"
@@ -52,18 +54,17 @@ const Login = () => {
 
 
             <div className="form-field-wrapper">
-    
                 <input 
                   type="submit" 
                   value="Login"
-                  className="btn"
+                  className="submit-btn"
                   />
 
             </div>
 
           </form>
 
-          <p>Don't have an account? <Link to="/register">Register</Link></p>
+          <p className='Resister-link'>Don't have an account? <Link to="/register">Register</Link></p>
 
         </div>
     </div>
