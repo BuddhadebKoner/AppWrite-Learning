@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { account } from "../appwriteConfig";
 import { useNavigate } from "react-router-dom";
-import { ID} from 'appwrite';
+import { ID } from 'appwrite';
 
 const AuthContext = createContext()
 
@@ -12,7 +12,6 @@ export const AuthProvider = ({children}) => {
         const [user, setUser] = useState(null)
 
         useEffect(() => {
-            //setLoading(false)
             checkUserStatus()
          }, [])
 
