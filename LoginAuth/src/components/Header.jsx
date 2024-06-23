@@ -19,15 +19,14 @@ const Header = () => {
         <div className="links--wrapper">
             {user ? (
             <>
-                <Link to="/" className="header--link">Home</Link>
-                <Link to="/profile" className="header--link">Profile</Link>
+                <Link to="/" className="header--link btn">Home</Link>
+                <Link to="/profile" className="header--link btn">Profile</Link>
 
                 <button onClick={logoutUser} className="btn">Logout</button>
             </>
             ):(
  
                 <Link className="btn" to="/login">Login</Link>
-
             )}
             
         </div>

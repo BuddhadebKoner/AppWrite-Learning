@@ -1,16 +1,17 @@
 import React, { useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../utils/AuthContext'
+import '../styles/Login.css'
 
 
 const Login = () => {
-  const {user, loginUser} = useAuth()
+  const { user, loginUser } = useAuth()
   const navigate = useNavigate()
 
   const loginForm = useRef(null)
 
   useEffect(() => {
-    if (user){
+    if (user) {
       navigate('/')
     }
   })
@@ -19,55 +20,52 @@ const Login = () => {
     e.preventDefault()
     const email = loginForm.current.email.value
     const password = loginForm.current.password.value
-    
-    const userInfo = {email, password}
+
+    const userInfo = { email, password }
 
     loginUser(userInfo)
   }
 
   return (
     <div className="container">
-        <div className="login-register-container">
-          Email : iambuddha@gmail.com
-          Password : Admin123
-          <form onSubmit={handleSubmit} ref={loginForm}> 
+      <div className="login-register-container">
+        <p
+        className='demo-credentials'
+        >email - iambuddha@gmail.com / password - 123456789</p>
+        <form onSubmit={handleSubmit} ref={loginForm}>
+          <div className="form-field-wrapper">
+            <label>Email :</label>
+            <input
+              required
+              type="email"
+              name="email"
+              placeholder="Enter email..."
+            />
+          </div>
 
-            <div className="form-field-wrapper">
-                <label>Email :</label>
-                <input 
-                  required
-                  type="email" 
-                  name="email"
-                  placeholder="Enter email..."
-                  />
-            </div>
+          <div className="form-field-wrapper">
+            <label>Password :</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password..."
+              autoComplete="password"
+            />
+          </div>
 
-            <div className="form-field-wrapper">
-                <label>Password :</label>
-                <input 
-                  type="password" 
-                  name="password"
-                  placeholder="Enter password..."
-                  autoComplete="password"
-                  />
-            </div>
+          <div className="form-field-wrapper">
+            <input
+              type="submit"
+              value="Login"
+              className="submit-btn"
+            />
+          </div>
+        </form>
 
-
-            <div className="form-field-wrapper">
-                <input 
-                  type="submit" 
-                  value="Login"
-                  className="submit-btn"
-                  />
-
-            </div>
-
-          </form>
-
-          <p className='Resister-link'>Don't have an account? <Link to="/register">Register</Link></p>
-
-        </div>
+        <p className='register-link'>Don't have an account? <Link to="/register">Register</Link></p>
+      </div>
     </div>
+
   )
 }
 
