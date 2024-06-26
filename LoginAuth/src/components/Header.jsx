@@ -20,7 +20,7 @@ const Header = () => {
             {user ? (
             <>
                 <Link to="/" className="header--link btn">Home</Link>
-                <Link to="/profile" className="header--link btn">Profile</Link>
+                <Link to="/profile" className="header--link btn">Devaloper</Link>
 
                 <button onClick={logoutUser} className="btn">Logout</button>
             </>
