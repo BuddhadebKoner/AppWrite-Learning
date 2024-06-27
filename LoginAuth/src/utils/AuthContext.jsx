@@ -56,16 +56,16 @@ export const AuthProvider = ({ children }) => {
     }
 
     const checkUserStatus = async () => {
-        // try {
-        //     let accountDetails = await account.get();
-        //     setUser(accountDetails)
-        // } catch (error) {
+        try {
+            let accountDetails = await account.get();
+            setUser(accountDetails)
+        } catch (error) {
 
-        // }
-        setTimeout(() => {
-            setLoading(false)
-        }, 1000)
-        setLoading(true)
+        }
+        // setTimeout(() => {
+        //     setLoading(false)
+        // }, 1000)
+        setLoading(false)
     }
 
     const contextData = {
