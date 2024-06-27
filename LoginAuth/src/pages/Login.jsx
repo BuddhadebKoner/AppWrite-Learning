@@ -31,7 +31,7 @@ const Login = () => {
       <div className="login-register-container">
         <p
         className='demo-credentials'
-        >email - thanos@gmail.com / password - 123456789</p>
+        >Use Any Demo Email To Register<br/>Dont Use Original Email & Password</p>
         <form onSubmit={handleSubmit} ref={loginForm}>
           <div className="form-field-wrapper">
             <label>Email :</label>
